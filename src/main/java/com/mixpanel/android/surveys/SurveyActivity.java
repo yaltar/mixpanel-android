@@ -268,26 +268,9 @@ public class SurveyActivity extends Activity {
             trackSurveyAttempted();
         }
 
-        final AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
-        alertBuilder.setTitle("We'd love your feedback!");
-        alertBuilder.setMessage("Mind taking a quick survey?");
-        alertBuilder.setPositiveButton("Sure", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                SurveyActivity.this.findViewById(R.id.com_mixpanel_android_activity_survey_id).setVisibility(View.VISIBLE);
-                mSurveyBegun = true;
-                showQuestion(mCurrentQuestion);
-            }
-        });
-        alertBuilder.setNegativeButton("No, Thanks", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                SurveyActivity.this.finish();
-            }
-        });
-        alertBuilder.setCancelable(false);
-        mDialog = alertBuilder.create();
-        mDialog.show();
+		SurveyActivity.this.findViewById(R.id.com_mixpanel_android_activity_survey_id).setVisibility(View.VISIBLE);
+		mSurveyBegun = true;
+		showQuestion(mCurrentQuestion);
     }
 
     @Override
